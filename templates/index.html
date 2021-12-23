@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -14,8 +16,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/plugins.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 
 </head>
@@ -31,7 +33,7 @@
 <div class="cavani_tm_modalbox">
 <div class="box_inner">
 <div class="close">
-<a href="#"><img class="svg" src="img/svg/cancel.svg" alt="" /></a>
+<a href="#"><img class="svg" src="{% static 'img/svg/cancel.svg' %}" alt="" /></a>
 </div>
 <div class="description_wrap"></div>
 </div>
@@ -40,7 +42,7 @@
 
 <div class="cavani_tm_header">
 <div class="logo">
-<a href="#"><img src="/img/logo.png" alt="" /></a>
+<a href="#"><img src="{% static 'img/logo.png' %}" alt="" /></a>
 </div>
 <div class="menu">
 <ul class="transition_link">
@@ -60,7 +62,7 @@
 <div class="cavani_tm_topbar">
 <div class="topbar_inner">
 <div class="logo">
-<a href="#"><img src="/img/logo.png" alt="" /></a>
+<a href="#"><img src="{% static 'img/logo.png' %}" alt="" /></a>
 </div>
 <div class="trigger">
 <div class="hamburger hamburger--slider">
@@ -75,7 +77,7 @@
 <div class="inner">
 <div class="wrapper">
 <div class="avatar">
-<div class="image" data-img-url="img/profilePhoto.jpg"></div>
+<div class="image" data-img-url="{% static 'img/profilePhoto.jpg' %}"></div>
 </div>
 <div class="menu_list">
 <ul class="transition_link">
@@ -88,11 +90,11 @@
 </div>
 <div class="social">
 <ul>
-<li><a href="#"><img class="svg" src="img/svg/social/facebook.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/twitter.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/instagram.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/dribbble.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/tik-tok.svg" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/facebook.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/twitter.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/instagram.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/dribbble.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/tik-tok.svg' %}" alt="" /></a></li>
 </ul>
 </div>
 <div class="copyright">
@@ -105,7 +107,7 @@
 
 <div class="cavani_tm_mainpart">
 <div class="author_image">
-<div class="main" data-img-url="img/profilePhoto.jpg"></div>
+<div class="main" data-img-url="{% static 'img/profilePhoto.jpg' %}"></div>
 </div>
 <div class="main_content">
 
@@ -146,12 +148,12 @@
 </div>
 <div class="right">
 <ul>
-<li><span class="first">Name:</span><span class="second">Alan Walker</span></li>
-<li><span class="first">Address:</span><span class="second">Ave Street, New York, USA</span></li>
-<li><span class="first">Study:</span><span class="second">Univercity of Oxford</span></li>
-<li><span class="first">Degree:</span><span class="second">Master of Science</span></li>
-<li><span class="first">Mail:</span><span class="second"><a href="#"><span class="__cf_email__" data-cfemail="d3bbb6bfbfbc93b0b2a5b2bdbafdb0bcbe">[email&#160;protected]</span></a></span></li>
-<li><span class="first">Phone:</span><span class="second">+77 022 444 05 05</span></li>
+<li><span class="first">Name:</span><span class="second">{{about.name}}</span></li>
+<li><span class="first">Address:</span><span class="second">{{about.address}}</span></li>
+<li><span class="first">Study:</span><span class="second">{{about.study}}</span></li>
+<li><span class="first">Degree:</span><span class="second">{{about.degree}}</span></li>
+<li><span class="first">Mail:</span><span class="second"><a href="#"><span class="__cf_email__" data-cfemail="d3bbb6bfbfbc93b0b2a5b2bdbafdb0bcbe">{{about.mail}}</span></a></span></li>
+<li><span class="first">Phone:</span><span class="second">{{about.phone}}</span></li>
 </ul>
 </div>
 </div>
@@ -164,11 +166,9 @@
 </div>
 <div class="list">
 <ul>
-<li><i class="icon-right-dir"></i>Web Development</li>
-<li><i class="icon-right-dir"></i>Graphic Design</li>
-<li><i class="icon-right-dir"></i>Landing Page</li>
-<li><i class="icon-right-dir"></i>On-Page SEO</li>
-<li><i class="icon-right-dir"></i>Web Hosting</li>
+{% for service in services %}
+<li><i class="icon-right-dir"></i>{{service.service}}</li>
+{% endfor %}
 </ul>
 </div>
 </div>
@@ -178,11 +178,9 @@
 </div>
 <div class="list">
 <ul>
-<li><i class="icon-right-dir"></i>Painting &amp; Drawing</li>
-<li><i class="icon-right-dir"></i>Reading &amp; Writing</li>
-<li><i class="icon-right-dir"></i>Music &amp; Cinema</li>
-<li><i class="icon-right-dir"></i>Travel &amp; Picnik</li>
-<li><i class="icon-right-dir"></i>Rain &amp; Snow</li>
+{% for interest in interests %}
+<li><i class="icon-right-dir"></i>{{interest.interest}}</li>
+{% endfor %}
 </ul>
 </div>
 </div>
@@ -338,49 +336,49 @@
 <ul>
 <li>
 <div class="list_inner">
-<img src="img/partners/1.png" alt="" />
+<img src="{% static 'img/partners/1.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/2.png" alt="" />
+<img src="{% static 'img/partners/2.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/3.png" alt="" />
+<img src="{% static 'img/partners/3.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/4.png" alt="" />
+<img src="{% static 'img/partners/4.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/5.png" alt="" />
+<img src="{% static 'img/partners/5.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/1.png" alt="" />
+<img src="{% static 'img/partners/1.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/2.png" alt="" />
+<img src="{% static 'img/partners/2.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
 <li>
 <div class="list_inner">
-<img src="img/partners/3.png" alt="" />
+<img src="{% static 'img/partners/3.png' %}" alt="" />
 <a class="cavani_tm_full_link" a href="#"></a>
 </div>
 </li>
@@ -401,7 +399,7 @@
 </div>
 <div class="details">
 <div class="image">
-<div class="main" data-img-url="img/testimonials/1.jpg"></div>
+<div class="main" data-img-url="{% static 'img/testimonials/1.jpg' %}"></div>
 </div>
 <div class="info">
 <h3>Alexander Walker</h3>
@@ -418,7 +416,7 @@
 </div>
 <div class="details">
 <div class="image">
-<div class="main" data-img-url="img/testimonials/2.jpg"></div>
+<div class="main" data-img-url="{% static 'img/testimonials/2.jpg' %}"></div>
 </div>
 <div class="info">
 <h3>Armin Van Buuren</h3>
@@ -435,7 +433,7 @@
 </div>
 <div class="details">
 <div class="image">
-<div class="main" data-img-url="img/testimonials/3.jpg"></div>
+<div class="main" data-img-url="{% static 'img/testimonials/3.jpg' %}"></div>
 </div>
 <div class="info">
 <h3>Baraka Clinton</h3>
@@ -473,8 +471,8 @@
 <li class="youtube">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/1.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/1.jpg' %}"></div>
 <span class="icon"><i class="icon-youtube-play"></i></span>
 <div class="details">
 <h3>Ave Brook</h3>
@@ -487,8 +485,8 @@
 <li class="vimeo">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/2.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/2.jpg' %}"></div>
 <span class="icon"><i class="icon-vimeo-1"></i></span>
 <div class="details">
 <h3>Kelly Hookin</h3>
@@ -501,8 +499,8 @@
 <li class="soundcloud">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/3.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/3.jpg' %}"></div>
 <span class="icon"><i class="icon-soundcloud-1"></i></span>
 <div class="details">
 <h3>Ashley Flores</h3>
@@ -515,36 +513,36 @@
 <li class="image">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/4.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/4.jpg' %}"></div>
 <span class="icon"><i class="icon-resize-full-alt"></i></span>
 <div class="details">
 <h3>Alla Gorova</h3>
 <span>Image</span>
 </div>
-<a class="cavani_tm_full_link zoom" href="img/portfolio/4.jpg"></a>
+<a class="cavani_tm_full_link zoom" href="{% static 'img/portfolio/4.jpg' %}"></a>
 </div>
 </div>
 </li>
 <li class="image">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/5.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/5.jpg' %}"></div>
 <span class="icon"><i class="icon-resize-full-alt"></i></span>
 <div class="details">
 <h3>Fele Sweet</h3>
 <span>Image</span>
 </div>
-<a class="cavani_tm_full_link zoom" href="img/portfolio/5.jpg"></a>
+<a class="cavani_tm_full_link zoom" href="{% static 'img/portfolio/5.jpg' %}"></a>
 </div>
 </div>
 </li>
 <li class="detail">
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/1-1.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/6.jpg"></div>
+<img src="{% static 'img/thumbs/1-1.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/6.jpg' %}"></div>
 <span class="icon"><i class="icon-doc-text-inv"></i></span>
 <div class="details">
 <h3>Alice Moon</h3>
@@ -576,9 +574,9 @@
 <li>
 <span class="first">Share</span>
 <ul class="share">
-<li><a href="#"><img class="svg" src="img/svg/social/facebook.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/twitter.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/instagram.svg" alt="" /></a>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/facebook.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/twitter.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/instagram.svg' %}" alt="" /></a>
 </li>
 </ul>
 </li>
@@ -590,24 +588,24 @@
 <li>
 <div class="list_inner">
 <div class="my_image">
-<img src="img/thumbs/4-2.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/1.jpg"></div>
+<img src="{% static 'img/thumbs/4-2.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/1.jpg' %}"></div>
 </div>
 </div>
 </li>
 <li>
 <div class="list_inner">
 <div class="my_image">
-<img src="img/thumbs/4-2.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/2.jpg"></div>
+<img src="{% static 'img/thumbs/4-2.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/2.jpg' %}"></div>
 </div>
 </div>
 </li>
 <li>
 <div class="list_inner">
 <div class="my_image">
-<img src="img/thumbs/4-2.jpg" alt="" />
-<div class="main" data-img-url="img/portfolio/3.jpg"></div>
+<img src="{% static 'img/thumbs/4-2.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/portfolio/3.jpg' %}"></div>
 </div>
 </div>
 </li>
@@ -635,8 +633,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/1.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/1.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -664,8 +662,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/2.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/2.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -693,8 +691,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/3.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/3.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -722,8 +720,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/4.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/4.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -751,8 +749,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/5.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/5.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -780,8 +778,8 @@
 <li>
 <div class="list_inner">
 <div class="image">
-<img src="img/thumbs/4-3.jpg" alt="" />
-<div class="main" data-img-url="img/news/6.jpg"></div>
+<img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
+<div class="main" data-img-url="{% static 'img/news/6.jpg' %}"></div>
 <a class="cavani_tm_full_link" href="#"></a>
 </div>
 <div class="details">
@@ -882,16 +880,14 @@
 
 
 <div class="cavani_tm_footer">
-<div class="copyright">
-<p>Copyright &copy; 2021</p>
-</div>
+
 <div class="social">
 <ul>
-<li><a href="#"><img class="svg" src="img/svg/social/facebook.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/twitter.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/instagram.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/dribbble.svg" alt="" /></a></li>
-<li><a href="#"><img class="svg" src="img/svg/social/tik-tok.svg" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/facebook.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/twitter.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/instagram.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/dribbble.svg' %}" alt="" /></a></li>
+<li><a href="#"><img class="svg" src="{% static 'img/svg/social/tik-tok.svg' %}" alt="" /></a></li>
 </ul>
 </div>
 </div>
@@ -903,10 +899,10 @@
 </div>
 
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'js/jquery.js' %}"></script>
 <!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
-<script src="js/plugins.js"></script>
-<script src="js/init.js"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/init.js' %}"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&amp;callback=initMap"></script>
 
 </body>
