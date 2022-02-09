@@ -43,7 +43,8 @@ class Interest(models.Model):
 class Education(models.Model):
     title = models.CharField(max_length=127, null=True, blank=True)
     description = models.CharField(max_length=127, null=True, blank=True)
-    year = models.DateTimeField()
+    start_year = models.DateField(null=True, blank=True)
+    end_year = models.DateField(null=True, blank=True)
     
     class Meta:
         verbose_name = 'Education'

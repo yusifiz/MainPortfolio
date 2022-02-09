@@ -219,39 +219,21 @@
                                         <div class="list">
                                             <div class="univ">
                                                 <ul>
+                                                    {% for education in educations %}
+                                                    
                                                     <li>
                                                         <div class="list_inner">
                                                             <div class="time">
-                                                                <span>2014 - 2016</span>
+                                                                <span>{{education.start_year|date:"Y"}} - {{education.end_year|date:"Y"}}</span>
                                                             </div>
                                                             <div class="place">
-                                                                <h3>Oxford Univercity</h3>
-                                                                <span>Master Degree</span>
+                                                                <h3>{{education.title}}</h3>
+                                                                <span>{{education.description}}</span>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li>
-                                                        <div class="list_inner">
-                                                            <div class="time">
-                                                                <span>2010 - 2014</span>
-                                                            </div>
-                                                            <div class="place">
-                                                                <h3>Texas Univercity</h3>
-                                                                <span>Bachelor Degree</span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="list_inner">
-                                                            <div class="time">
-                                                                <span>2008 - 2010</span>
-                                                            </div>
-                                                            <div class="place">
-                                                                <h3>Simone College</h3>
-                                                                <span>Associate Degree</span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    {% endfor %}
+
                                                 </ul>
                                             </div>
                                         </div>
