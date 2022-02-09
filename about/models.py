@@ -38,3 +38,16 @@ class Interest(models.Model):
         
     def __str__(self):
         return self.interest
+    
+    
+class Education(models.Model):
+    title = models.CharField(max_length=127, null=True, blank=True)
+    description = models.CharField(max_length=127, null=True, blank=True)
+    year = models.DateTimeField()
+    
+    class Meta:
+        verbose_name = 'Education'
+        verbose_name_plural = 'Educations'
+        
+    def __str__(self):
+        return self.title
