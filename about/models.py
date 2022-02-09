@@ -52,3 +52,16 @@ class Education(models.Model):
         
     def __str__(self):
         return self.title
+    
+class Experience(models.Model):
+    title = models.CharField(max_length=127, null=True, blank=True)
+    description = models.CharField(max_length=127, null=True, blank=True)
+    start_year = models.DateField(null=True, blank=True)
+    end_year = models.DateField(null=True, blank=True)
+    
+    class Meta:
+        verbose_name = 'Experience'
+        verbose_name_plural = 'Experiences'
+        
+    def __str__(self):
+        return self.title
