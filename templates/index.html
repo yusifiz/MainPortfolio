@@ -905,31 +905,26 @@
                             <div class="form">
                                 <div class="left">
                                     <div class="fields">
-                                        <form action="https://marketifythemes.net/" method="post" class="contact_form"
+                                        <form action="" method="post" class="contact_form"
                                             id="contact_form">
-                                            {% csrf_token %}
-
-                                            {% for field in form %}
                                             
                                             <div class="returnmessage"
                                                 data-success="Your message has been received, We will contact you soon.">
                                             </div>
                                             <div class="empty_notice"><span>Please Fill Required Fields</span></div>
-                                            <div class="first">
-                                                {{ field.label_tag }}
-                                                {{ field}}
-                                            </div>
+                                            <div class="last">
+                                            {% csrf_token %}
+                                            {% for field in form %}
+
+                                            
+                                            {{ field }}
+
                                             {% endfor %}
-                                            {% if messages %}
-                                            <div class="cavani_tm_button">
-                                                {% for message in messages %}
-                                                
-                                                <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
-
-                                                {% endfor %}
-
                                             </div>
-                                            {% endif %}
+                                            <div class="cavani_tm_button">
+                                                <button type="submit">Send Message</button>
+                                            </div>
+
                                         </form>
                                     </div>
                                 </div>

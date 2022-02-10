@@ -65,3 +65,13 @@ class Experience(models.Model):
         
     def __str__(self):
         return self.title
+    
+
+class Contact(models.Model):
+    fullname = models.CharField(max_length=100,blank=True,null=True)
+    email = models.CharField(max_length=100,blank=True,null=True)
+    message = models.TextField()
+    
+    
+    def __str__(self):
+        return self.fullname
