@@ -11,9 +11,5 @@ def contact(request):
         form = ContactForm(data=request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.INFO, 'Successfuly registration!')
-            return redirect('/contact')
-        else:
-            messages.add_message(request, messages.INFO, 'Your mail is not valid!')
         
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
