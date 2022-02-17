@@ -137,8 +137,7 @@
                                 <span class="cd-headline clip">
                                     <span class="blc">Creative</span>
                                     <span class="cd-words-wrapper">
-                                        <b class="is-visible">Designer</b>
-                                        <b>Developer</b>
+                                        <b class="is-visible">Developer</b>
                                         <b>Freelancer</b>
                                     </span>
                                 </span>
@@ -335,63 +334,29 @@
                                 </div>
                                 <div class="list">
                                     <ul class="owl-carousel">
+                                        {% for t in testimonials %}
+                                        
                                         <li>
                                             <div class="list_inner">
                                                 <div class="text">
                                                     <i class="icon-quote-left"></i>
-                                                    <p>Beautiful minimalist design and great, fast response with
-                                                        support. Highly recommend. Thanks Marketify!</p>
+                                                    <p>{{ t.feedback }}</p>
                                                 </div>
                                                 <div class="details">
                                                     <div class="image">
                                                         <div class="main"
-                                                            data-img-url="{% static 'img/testimonials/1.jpg' %}"></div>
+                                                            data-img-url="{{ t.image.url }}"></div>
                                                     </div>
                                                     <div class="info">
-                                                        <h3>Alexander Walker</h3>
-                                                        <span>Graphic Designer</span>
+                                                        <h3>{{ t.fullname }}</h3>
+                                                        <span>{{ t.job }}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="list_inner">
-                                                <div class="text">
-                                                    <i class="icon-quote-left"></i>
-                                                    <p>These people really know what they are doing! Great customer
-                                                        support availability and supperb kindness.</p>
-                                                </div>
-                                                <div class="details">
-                                                    <div class="image">
-                                                        <div class="main"
-                                                            data-img-url="{% static 'img/testimonials/2.jpg' %}"></div>
-                                                    </div>
-                                                    <div class="info">
-                                                        <h3>Armin Van Buuren</h3>
-                                                        <span>Content Manager</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="list_inner">
-                                                <div class="text">
-                                                    <i class="icon-quote-left"></i>
-                                                    <p>I had a little problem and the support was just awesome to
-                                                        quickly solve the situation. And keep going on.</p>
-                                                </div>
-                                                <div class="details">
-                                                    <div class="image">
-                                                        <div class="main"
-                                                            data-img-url="{% static 'img/testimonials/3.jpg' %}"></div>
-                                                    </div>
-                                                    <div class="info">
-                                                        <h3>Baraka Clinton</h3>
-                                                        <span>English Teacher</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+
+                                        {% endfor %}
+
                                     </ul>
                                 </div>
                             </div>
@@ -565,12 +530,12 @@
 
             <div class="social">
                 <ul>
-                    <li><a href="#"><img class="svg" src="{% static 'img/svg/social/facebook.svg' %}" alt="" /></a></li>
-                    <li><a href="#"><img class="svg" src="{% static 'img/svg/social/twitter.svg' %}" alt="" /></a></li>
-                    <li><a href="#"><img class="svg" src="{% static 'img/svg/social/instagram.svg' %}" alt="" /></a>
+                    <li><a href="https://www.facebook.com/yusif.osmanov.3" target="_blank"><img class="svg" src="{% static 'img/svg/social/facebook.svg' %}" alt="" /></a></li>
+                    <li><a href="https://www.instagram.com/yusifiz/" target="_blank"><img class="svg" src="{% static 'img/svg/social/instagram.svg' %}" alt="" /></a>
+                    <li><a href="https://github.com/yusifiz" target="_blank"><img class="svg" src="{% static 'img/svg/social/github.svg' %}" alt="" /></a></li>
                     </li>
-                    <li><a href="#"><img class="svg" src="{% static 'img/svg/social/dribbble.svg' %}" alt="" /></a></li>
-                    <li><a href="#"><img class="svg" src="{% static 'img/svg/social/tik-tok.svg' %}" alt="" /></a></li>
+                    <li><a href="https://medium.com/@yusifosmanov475" target="_blank"><img class="svg" src="{% static 'img/svg/social/medium.svg' %}" alt="" /></a></li>
+                    <li><a href="https://mail.google.com/" target="_blank"><img class="svg" src="{% static 'img/svg/social/gmail.svg' %}" alt="" /></a></li>
                 </ul>
             </div>
         </div>

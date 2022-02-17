@@ -11,6 +11,7 @@ def home(request):
     experiences = Experience.objects.all()
     blogs = Blog.objects.all()
     projects = Projects.objects.all()
+    testimonials = Testimonials.objects.all()
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(data=request.POST)
@@ -25,6 +26,7 @@ def home(request):
         'experiences':experiences,
         'blogs':blogs,
         'projects':projects,
+        'testimonials':testimonials,
         'form':form
     }
     return render(request, "index.html", context)
