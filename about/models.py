@@ -1,4 +1,5 @@
 
+from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
@@ -84,6 +85,10 @@ class Projects(models.Model):
     date = models.DateField(null=True,blank=True)
     link = models.URLField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='blog/')
+    
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Projects'
     
     def __str__(self):
         return self.title    

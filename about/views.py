@@ -10,6 +10,7 @@ def home(request):
     educations = Education.objects.all()
     experiences = Experience.objects.all()
     blogs = Blog.objects.all()
+    projects = Projects.objects.all()
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(data=request.POST)
@@ -23,6 +24,7 @@ def home(request):
         'educations':educations,
         'experiences':experiences,
         'blogs':blogs,
+        'projects':projects,
         'form':form
     }
     return render(request, "index.html", context)
