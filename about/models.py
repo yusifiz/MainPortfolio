@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -66,7 +67,18 @@ class Experience(models.Model):
     def __str__(self):
         return self.title
     
-
+    
+class Blog(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    category = models.CharField(max_length=100, blank=True, null=True)
+    date = models.DateField(null=True,blank=True)
+    link = models.URLField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to='blog/')
+    
+    def __str__(self):
+        return self.title
+    
+    
 class Contact(models.Model):
     fullname = models.CharField(max_length=100,blank=True,null=True)
     email = models.CharField(max_length=100,blank=True,null=True)

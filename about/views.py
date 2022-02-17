@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import About, Interest, Service, Education, Experience
+from . models import *
 from . forms import ContactForm
 # Create your views here.
 
@@ -9,6 +9,7 @@ def home(request):
     interests = Interest.objects.all()
     educations = Education.objects.all()
     experiences = Experience.objects.all()
+    blogs = Blog.objects.all()
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(data=request.POST)
@@ -21,6 +22,7 @@ def home(request):
         'interests':interests,
         'educations':educations,
         'experiences':experiences,
+        'blogs':blogs,
         'form':form
     }
     return render(request, "index.html", context)
