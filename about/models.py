@@ -94,6 +94,21 @@ class Projects(models.Model):
         return self.title    
     
     
+class Testimonials(models.Model):
+    fullname = models.CharField(max_length=255, blank=True, null=True)
+    job = models.CharField(max_length=100, null=True, blank=True)
+    feedback = models.TextField(null=True, blank=True)
+    date = models.DateField(null=True,blank=True)
+    image = models.ImageField(upload_to='blog/')
+    
+    class Meta:
+        verbose_name = 'Testimonial'
+        verbose_name_plural = 'Testimonials'
+    
+    def __str__(self):
+        return self.fullname 
+    
+    
 class Contact(models.Model):
     fullname = models.CharField(max_length=100,blank=True,null=True)
     email = models.CharField(max_length=100,blank=True,null=True)
