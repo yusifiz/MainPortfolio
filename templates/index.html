@@ -61,7 +61,7 @@
                     <li class="active"><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#news">News</a></li>
+                    <li><a href="#news">Blogs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <span class="ccc"></span>
@@ -617,21 +617,23 @@
                                     
                                          <li>
                                             <div class="list_inner">
+                                                <a class="" href="{{ blog.link }}" target="_blank">
                                                 <div class="image">
                                                     <img src="{% static 'img/thumbs/4-3.jpg' %}" alt="" />
                                                     <div class="main" data-img-url="{{ blog.image.url }}"></div>
-                                                    <a class="cavani_tm_full_link" href="{{ blog.link }}" target="_blank"></a>
                                                 </div>
+                                                </a>
                                                 <div class="details">
                                                     <div class="metabox">
                                                         <div class="info">
                                                             <span class="category"><a href="#">{{ blog.category }}</a></span>
                                                             <span class="date">{{ blog.date |date:"M Y" }}</span>
                                                         </div>
+                                                        <a href="{{ blog.link }}" target="_blank">
                                                         <div class="title">
-                                                            <h3><a href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
-                                                            </h3>
+                                                            <h3>{{ blog.title }}</h3>
                                                         </div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
