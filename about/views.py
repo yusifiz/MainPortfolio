@@ -4,7 +4,6 @@ from . forms import ContactForm
 # Create your views here.
 
 def home(request):
-    about = About.objects.get(pk=1)
     services = Service.objects.all()
     interests = Interest.objects.all()
     educations = Education.objects.all()
@@ -19,7 +18,6 @@ def home(request):
             form.save()
     
     context = {
-        'about':about,
         'services':services,
         'interests':interests,
         'educations':educations,
